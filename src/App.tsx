@@ -93,7 +93,7 @@ function App() {
       {page_n === 2 && (
         <div>
           <h1>Wallet Contract</h1>
-          <button onClick={() => { useWalletContract(Address.parse(walletContractAddress));}} >catch data</button>
+          <button onClick={() => { }} >catch data</button>
           <div className='Card'>
             <div><b>Wallet contract balance</b></div>
             {wallet_contract_balance && <div className='Hint'>{fromNano(wallet_contract_balance)} ton</div>}
