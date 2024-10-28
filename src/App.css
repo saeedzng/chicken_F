@@ -1,0 +1,120 @@
+#root {
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  text-align: center;
+  background: linear-gradient(to right, #0000ff, #8a2be2); /* Blue to purple gradient */
+  font-size: 2vw; /* Scaled font size */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 2vw; /* Padding around the container */
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu {
+  background-color: #333;
+  overflow: hidden;
+  padding: 1vh 0; /* Scaled padding */
+  border-radius: 2vw; /* Scaled border radius */
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Make the menu horizontal */
+  justify-content: space-around; /* Space items evenly */
+  flex-direction: row-reverse; /* Align items from right to left */
+}
+
+.menu ul li {
+  display: inline; /* Ensure items are inline */
+}
+
+.menu ul li button, .menu ul li > * {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 2vh 3vw; /* Bigger padding for menu items */
+  text-decoration: none;
+  background-color: #333;
+  border: none;
+  border-radius: 2vw; /* Scaled border radius */
+  vertical-align: middle; /* Align items vertically in the middle */
+  font-size: 2.5vw; /* Bigger font size for menu items */
+}
+
+.menu ul li button:hover, .menu ul li > *:hover {
+  background-color: #575757; /* Change background color on hover */
+}
+
+.ton-connect-button {
+  padding: 0; /* Remove extra padding */
+  height: auto; /* Adjust the height */
+  display: inline-flex; /* Flexbox for better alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  font-size: 2.5vw; /* Match font size with menu items */
+}
+
+.card {
+  padding: 4vh 2vw; /* Scaled padding */
+}
+
+.read-the-docs {
+  color: #888;
+  font-size: 2vw; /* Scaled font size */
+}
+
+.logo {
+  height: 5vh; /* Adjust the size as needed */
+  margin-left: 10px; /* Add spacing between the logo and TonConnect button */
+}
+
+/* Responsive adjustments for horizontal menu */
+@media (max-width: 768px) {
+  #root {
+    padding: 1vh;
+    font-size: 3vw; /* Further reduce font size for mobile */
+  }
+
+  .menu ul {
+    flex-direction: row-reverse; /* Align items from right to left on mobile */
+  }
+
+  .menu ul li {
+    display: inline-block; /* Ensure items are inline on mobile */
+    margin: 0 1vw; /* Add margin to increase space between items */
+  }
+
+  .menu ul li button, .menu ul li > * {
+    padding: 1.5vh 2.5vw; /* Bigger padding for mobile */
+    border-radius: 2vw;
+    font-size: 2.2vw; /* Bigger font size for menu items on mobile */
+  }
+
+  .logo {
+    height: 5vh; /* Scaled height */
+  }
+
+  .Hint {
+    font-size: 2vw; /* Scaled font size */
+    overflow-wrap: break-word; /* Ensure long addresses wrap properly */
+  }
+}
