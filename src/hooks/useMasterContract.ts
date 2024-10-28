@@ -7,10 +7,10 @@ import { toNano } from "ton-core";
 import { useTonConnect } from "./useTonConnect";
 // export const referal_address : Address = Address.parse ("EQAtl3w8VMCTDG1_acX4DoDOXSP1mdvWpIWHsvGigtfShx9n");
 
-export function useMasterContract(wowner_address : Address , wreferal_address : Address) {
+export function useMasterContract() {
 
-  // const wallet_owner_address1 = Address.parse("0QDbP6nFnSSS1dk9EHL5G_bYG0cIqPBwv1eje7uOGiVZcno8")
-  // const wallet_referal_address1 = Address.parse("EQDkzMK31Gn9nad9m1jnhEXXl8nKHJCf4006iyP6lSNyGs2C")
+  const wallet_owner_address1 = Address.parse("0QDbP6nFnSSS1dk9EHL5G_bYG0cIqPBwv1eje7uOGiVZcno8")
+  const wallet_referal_address1 = Address.parse("EQDkzMK31Gn9nad9m1jnhEXXl8nKHJCf4006iyP6lSNyGs2C")
 
   const [future_user_wallet_address, setFuture_user_wallet_address] = useState<null | { wc_addressss: Address; }>();
 
@@ -34,7 +34,7 @@ export function useMasterContract(wowner_address : Address , wreferal_address : 
       setFuture_user_wallet_address(null);
       const val = await masterContract.getData();
       const balance = await masterContract.getBalance();
-      const wc = await masterContract.getWalletAddress(wowner_address, wreferal_address);
+      const wc = await masterContract.getWalletAddress(wallet_owner_address1, wallet_referal_address1);
       setContractData({ owner_address: val.owner_sender });
       setBalance(balance.number);
       setFuture_user_wallet_address({ wc_addressss: wc.wallet_contract_address });

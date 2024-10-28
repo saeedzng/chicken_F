@@ -28,8 +28,8 @@ function App() {
   }, []);
 
   const { master_contract_address, sendDeployByMaster, master_contract_balance, wc_addressss } = useMasterContract(
-    Address.parse("0QDbP6nFnSSS1dk9EHL5G_bYG0cIqPBwv1eje7uOGiVZcno8"),
-    Address.parse(referal_address)
+    // Address.parse("0QDbP6nFnSSS1dk9EHL5G_bYG0cIqPBwv1eje7uOGiVZcno8"),
+    // Address.parse(referal_address)
   );
 
   useEffect(() => {
