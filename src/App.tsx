@@ -18,7 +18,7 @@ function App() {
   const { connected } = useTonConnect();
   const owner_address = useTonAddress();
   const [referal_address, setReferal_address] = useState("EQDkzMK31Gn9nad9m1jnhEXXl8nKHJCf4006iyP6lSNyGs2C");
-  const [walletContractAddress, setWalletContractAddress] = useState("kQCC8qWDzWBLEP-qpQEWSZvNp_I8fm9IVnedG_9T-n-9D-W6");
+  const [walletContractAddress, setWalletContractAddress] = useState<string>("kQCC8qWDzWBLEP-qpQEWSZvNp_I8fm9IVnedG_9T-n-9D-W6");
 
   useEffect(() => {
     const walletAddressFromUrl = window.Telegram.WebApp.initDataUnsafe.start_param;
@@ -29,7 +29,7 @@ function App() {
 
   const { master_contract_address, sendDeployByMaster, master_contract_balance, wc_addressss } = useMasterContract(
     Address.parse("0QDbP6nFnSSS1dk9EHL5G_bYG0cIqPBwv1eje7uOGiVZcno8"),
-    Address.parse(referal_address),
+    Address.parse(referal_address)
   );
 
   useEffect(() => {
@@ -69,11 +69,11 @@ function App() {
                 <label>Deployed contract at: <a>{wc_addressss && <div>{wc_addressss.toString()}</div>}</a></label>
               </div>
               <button onClick={() => {
-                
+                useWalletContract(Address.parse(walletContractAddress));
                 setPageN(2);
               }}>Open Wallet Contract</button>
               <button onClick={() => {
-              WebApp.showAlert((wc_addressss + ' ---- ' + walletContractAddress))
+              WebApp.showAlert((wc_addressss + ' - ' + walletContractAddress))
 
                }}>show alert</button>
               <p>owner : {owner_address}</p>
@@ -93,7 +93,7 @@ function App() {
       {page_n === 2 && (
         <div>
           <h1>Wallet Contract</h1>
-          <button onClick={() => { }} >catch data</button>
+          <button onClick={() => { useWalletContract(Address.parse(walletContractAddress));}} >catch data</button>
           <div className='Card'>
             <div><b>Wallet contract balance</b></div>
             {wallet_contract_balance && <div className='Hint'>{fromNano(wallet_contract_balance)} ton</div>}
