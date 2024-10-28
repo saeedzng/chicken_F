@@ -29,7 +29,7 @@ function App() {
 
   const { master_contract_address, sendDeployByMaster, master_contract_balance, wc_addressss } = useMasterContract(
     Address.parse("0QDbP6nFnSSS1dk9EHL5G_bYG0cIqPBwv1eje7uOGiVZcno8"),
-    Address.parse(referal_address)
+    Address.parse("kQCC8qWDzWBLEP-qpQEWSZvNp_I8fm9IVnedG_9T-n-9D-W6")
   );
 
   useEffect(() => {
@@ -69,11 +69,11 @@ function App() {
                 <label>Deployed contract at: <a>{wc_addressss && <div>{wc_addressss.toString()}</div>}</a></label>
               </div>
               <button onClick={() => {
-                useWalletContract(Address.parse(walletContractAddress));
+                
                 setPageN(2);
               }}>Open Wallet Contract</button>
               <button onClick={() => {
-              WebApp.showAlert((wc_addressss + ' --- ' + walletContractAddress))
+              WebApp.showAlert((wc_addressss + ' ---- ' + walletContractAddress))
 
                }}>show alert</button>
               <p>owner : {owner_address}</p>
